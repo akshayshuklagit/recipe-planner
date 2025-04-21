@@ -1,0 +1,133 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* resources/css/app.css */
+.calendar-container {
+  position: relative;
+  overflow-x: auto;
+}
+
+/* Add temporary test rule */
+body {
+  background-color: red !important;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.calendar-day {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.meal-slot {
+  min-height: 150px;
+  background: white;
+  border: 2px dashed #dee2e6;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  transition: all 0.2s;
+}
+
+.meal-slot:hover {
+  border-color: #0d6efd;
+  background: #f8f9fa;
+}
+
+.available-recipes {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 300px;
+  height: 100vh;
+  background: white;
+  padding: 1rem;
+  box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+}
+
+.recipe-card {
+  cursor: move;
+  user-select: none;
+}
+
+.recipe-card[draggable="true"] {
+  opacity: 1;
+}
+
+.recipe-card[draggable="true"]:hover {
+  opacity: 0.8;
+}
+
+/* resources/css/app.css */
+.recipe-card {
+  padding: 10px;
+  margin: 5px;
+  background: #fff;
+  border: 1px solid #ddd;
+  cursor: move;
+  transition: all 0.3s;
+}
+
+.meal-slot {
+  min-height: 100px;
+  border: 2px dashed #ccc;
+  margin: 10px 0;
+  padding: 10px;
+  transition: all 0.3s;
+}
+
+.meal-slot.dragover {
+  border-color: #007bff;
+  background: rgba(0, 123, 255, 0.1);
+}
+
+.recipe-card.dragging {
+  opacity: 0.5;
+  transform: scale(0.98);
+}
+
+.empty-slot {
+  color: #666;
+  font-style: italic;
+  margin: 0;
+}
+
+.recipe-list {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.recipe-card {
+  padding: 1rem;
+  background: white;
+  border: 1px solid #dee2e6;
+  border-radius: 0.25rem;
+  cursor: move;
+  transition: transform 0.2s;
+}
+
+.recipe-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.recipe-card small {
+  display: block;
+  font-size: 0.8em;
+  color: #6c757d;
+}
+
+
+/* Add these styles to your existing CSS */
+.recipe-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* ... rest of the CSS ... */
+}
